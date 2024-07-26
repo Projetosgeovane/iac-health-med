@@ -52,7 +52,6 @@ jobs:
         run: terraform plan
 
       - name: Terraform Apply
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         env:
           TF_VAR_labRoleArn: ${{ secrets.LAB_ROLE_ARN }}
           TF_VAR_principal_arn: ${{ secrets.PRINCIPAL_ARN }}
